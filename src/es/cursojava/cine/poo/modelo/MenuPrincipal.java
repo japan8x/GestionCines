@@ -63,15 +63,15 @@ public class MenuPrincipal {
             
         }
         
-        System.out.println("\n¡Registro completado! Comienza la compra secuencial.\n");
+        System.out.println("¡Registro completado! Comienza la compra secuencial.\n");
 
         // --- Turnos secuenciales ---
-        String menu ="""
-                1) Listar películas y disponibilidad
-                2) Comprar entradas
-                3) Mostrar ocupación por sala
-                4) Salir (pasar al siguiente usuario)
-                """;
+        String menu = """
+		                1) Listar películas y disponibilidad
+		                2) Comprar entradas
+		                3) Mostrar ocupación por sala
+		                4) Salir (pasar al siguiente usuario)
+		              """;
         
         for (int turno = 0; turno < compradores.length; turno++) {
         	

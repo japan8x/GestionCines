@@ -133,16 +133,25 @@ public class SalaDeCine {
     }
 
     /** Devuelve un string corto con título de la película y disponibilidad. */
-    public String resumen() {
+    public StringBuilder resumen() {
     
     	int libres = asientosLibres();
-        
-    	return " | Sala:      " + codigoSala + 
-    		   " | Titulo:    " + pelicula.getTitulo() +
-               " | Capacidad: " + capacidad + 
-               " | Libres:    " + libres + 
-               " | Ocupados:  " + (capacidad - libres) +
-               " |            ";
+    	
+        StringBuilder sb = new StringBuilder("")
+        		.append(" | Sala: ")
+                .append(codigoSala)
+                .append(" | Titulo: ")
+                .append(pelicula.getTitulo())
+                .repeat(" ", (35 - pelicula.getTitulo().length()))
+                .append(" | Capacidad: ")
+                .append(capacidad)
+                .append(" | Libres: ")
+                .append(libres)
+                .append(" | Ocupados: ")
+                .append(capacidad - libres)
+                .append(" |            ");
+    	 
+    	return sb;
     
     }
 
@@ -202,6 +211,7 @@ public class SalaDeCine {
         	for (int j = 0; j < numeroColumnas; j++) {
         		
         		Usuario u = butacas[(i+j)];
+        		System.out.println("butaca[ " + ((i*numeroColumnas) + (j + 1)) + " ] ");
                 sb.append("[ ");
                 
                 if (u == null) { 
@@ -215,12 +225,6 @@ public class SalaDeCine {
                 }
                 
                 sb.append(" ] ");
-                
-//                if (j < numeroColumnas) { 
-//                	
-//                	sb.append("\n");
-//                
-//                }
         		
         	}
         	

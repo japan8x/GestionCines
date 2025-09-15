@@ -15,7 +15,7 @@ public class Cine {
     	
         if (nombreCine == null || nombreCine.isBlank()) {
         	
-        	throw new IllegalArgumentException("nombreCine de cine obligatorio");
+        	throw new IllegalArgumentException("Nombre de cine obligatorio");
         
         }
         
@@ -62,9 +62,14 @@ public class Cine {
     }
 
     public String listarEstado() {
-    	
-        StringBuilder sb = new StringBuilder("=== Estado del Cine: ").append(nombreCine).append(" ===\n");
-        System.out.println("===================================================================");
+ 
+        StringBuilder sb = new StringBuilder("").repeat("=", 46)
+        							 .append("\n").repeat("=", 5)
+        		                     .append(" Estado del Cine: ")
+        		                     .append(nombreCine)
+        		                     .append(" ").repeat("=", 5)
+        		                     .append("\n").repeat("=", 46)
+                                     .append("\n");
         
         Arrays.stream(salas).forEach(s -> sb.append(s.resumen()).append("\n"));
         
