@@ -43,6 +43,7 @@ public class Cine {
     	
     }
 
+    // MÉTODOS NO ESTÁTICOS
     public List<SalaDeCine> salasConDisponibilidad(int n) {
     	
         List<SalaDeCine> res = new ArrayList<>();
