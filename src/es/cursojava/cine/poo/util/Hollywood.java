@@ -194,8 +194,9 @@ public class Hollywood {
 	     int sel = io.leerEnteroEnRango("Seleccione sala (1-" + salas.length + "): ", 1, salas.length);
 	     
 	     SalaDeCine s = salas[sel - 1];
-	     System.out.println("\n" + s.mapaOcupacionSala() + "\n");
-	
+	     //System.out.println("\n" + s.mapaOcupacionSala() + "\n");
+	     System.out.println("\n" + s.mapaOcupacion() + "\n");
+	     
 	}
 
 }
